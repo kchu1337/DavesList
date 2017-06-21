@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org" lang="en">
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous"/>
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<div class="col-md-4">@Valid
+    <form th:action="@{/add}" th:object="property" method="post">
+
+        <div><label> Address:<br/> <input type="text" th:field="*{address}"/> </label></div>
+        <div><label> City: <br/><input type="text" th:field="*{city}"/> </label></div>
+        <div><label> State: <br/><input type="text" th:field="*{state}"/> </label></div>
+        <label>Price:</label>
+        <div class="input-group">
+            <span class="input-group-addon"><br/>$</span>
+            <input type="text" class="form-control" th:field="*{price}">
+        </div>
+        <div><label> Description:<br/> <input type="text" th:field="*{desc}"/> </label></div>
+        <div><label> Rules:<br/> <input type="text" th:field="*{rules}"/> </label></div>
+        <div class="form-group">
+            <label for="sel1">Select list:</label>
+            <select class="form-control" id="sel1" th:field="*{wifi}">
+                <option>true</option>
+                <option>false</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="sel2">Select Cable Type:</label>
+            <select class="form-control" id="sel2" th:field="*{cable}">
+                <option>none</option>
+                <option>basic</option>
+                <option>premium</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="sel3">Has Private Bathroom?:</label>
+            <select class="form-control" id="sel3" th:field="*{bathroom}">
+                <option>true</option>
+                <option>false</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="sel4">Is Rented?:</label>
+            <select class="form-control" id="sel4" th:field="*{isRented}">
+                <option>true</option>
+                <option>false</option>
+            </select>
+        </div>
+        <div><input type="submit" value="Sign In"/></div>
+    </form>
+</div>
+</body>
+</html>
